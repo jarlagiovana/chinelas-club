@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chinelas Club</title>
+
 <style>
 :root {
   --rosa: #ec4899;
@@ -12,13 +12,16 @@
   --rosa-claro: #fce7f3;
   --fundo: #fff9fb;
 }
+
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: var(--fundo);
   color: #18181b;
 }
+
 header {
   background: white;
   padding: 18px 5%;
@@ -29,9 +32,23 @@ header {
   gap: 15px;
   border-bottom: 1px solid #eee;
 }
-.logo { font-size: 22px; font-weight: bold; }
-nav { display: flex; flex-wrap: wrap; gap: 8px; }
-button, select { cursor: pointer; font-family: inherit; }
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button, select {
+  cursor: pointer;
+  font-family: inherit;
+}
+
 nav button {
   border: none;
   background: transparent;
@@ -39,13 +56,22 @@ nav button {
   border-radius: 25px;
   font-weight: bold;
 }
-nav button:hover, nav button.ativo {
+
+nav button:hover,
+nav button.ativo {
   background: var(--rosa-claro);
   color: var(--rosa-escuro);
 }
-main { max-width: 1150px; margin: auto; padding: 35px 20px; }
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
 .pagina { display: none; }
 .pagina.ativa { display: block; }
+
 .hero {
   text-align: center;
   background: white;
@@ -53,13 +79,18 @@ main { max-width: 1150px; margin: auto; padding: 35px 20px; }
   padding: 65px 25px;
   border: 1px solid #eee;
 }
-.hero h1 { font-size: clamp(28px,5vw,44px); }
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+}
+
 .hero p {
   color: #666;
   max-width: 600px;
   margin: 0 auto 25px;
   line-height: 1.6;
 }
+
 .botao {
   background: var(--rosa);
   border: none;
@@ -69,13 +100,23 @@ main { max-width: 1150px; margin: auto; padding: 35px 20px; }
   font-weight: bold;
   margin: 4px;
 }
-.botao:hover { background: var(--rosa-escuro); }
+
+.botao:hover {
+  background: var(--rosa-escuro);
+}
+
 .secundario {
   background: white;
   color: #111;
   border: 1px solid #ccc;
 }
+
+.secundario:hover {
+  background: #fce7f3;
+}
+
 .perigo { background: #222; }
+
 .barra {
   display: flex;
   justify-content: space-between;
@@ -84,23 +125,27 @@ main { max-width: 1150px; margin: auto; padding: 35px 20px; }
   gap: 15px;
   margin-bottom: 25px;
 }
+
 select {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 25px;
   background: white;
 }
+
 .grade {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(235px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
   gap: 20px;
 }
-.produto,.caixa {
+
+.produto, .caixa {
   background: white;
   border: 1px solid #e5e5e5;
   border-radius: 20px;
   padding: 16px;
 }
+
 .produto img {
   width: 100%;
   height: 230px;
@@ -109,8 +154,15 @@ select {
   background: white;
   border: 1px solid #f4f4f5;
 }
+
 .produto h3 { margin: 12px 0 8px; }
-.produto p { font-size: 14px; color: #666; line-height: 1.5; }
+
+.produto p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
 .etiqueta {
   display: inline-block;
   background: var(--rosa-claro);
@@ -121,6 +173,7 @@ select {
   font-size: 12px;
   font-weight: bold;
 }
+
 .acoes {
   display: flex;
   justify-content: space-between;
@@ -129,6 +182,7 @@ select {
   gap: 8px;
   margin-top: 15px;
 }
+
 .coracao {
   border: 1px solid var(--rosa);
   background: white;
@@ -138,18 +192,26 @@ select {
   height: 40px;
   font-size: 20px;
 }
-.coracao.marcado { background: var(--rosa); color: white; }
+
+.coracao.marcado {
+  background: var(--rosa);
+  color: white;
+}
+
 .contas {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+
 .caixa { padding: 28px; }
+
 .caixa label {
   display: block;
   margin: 15px 0;
   font-weight: bold;
 }
+
 .caixa input {
   display: block;
   width: 100%;
@@ -158,6 +220,7 @@ select {
   border: 1px solid #ddd;
   border-radius: 12px;
 }
+
 #mensagem {
   position: fixed;
   bottom: 20px;
@@ -170,6 +233,7 @@ select {
   max-width: 90%;
   z-index: 100;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -180,7 +244,9 @@ select {
   padding: 20px;
   z-index: 50;
 }
+
 .modal.ativo { display: flex; }
+
 .modal-conteudo {
   background: white;
   border-radius: 20px;
@@ -191,35 +257,50 @@ select {
   overflow: auto;
   text-align: center;
 }
+
 .modal-conteudo img {
   width: 100%;
   height: 260px;
   object-fit: contain;
 }
+
 @media(max-width:600px) {
   header { justify-content: center; }
   .hero { padding: 40px 18px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo">♥ Chinelas Club</div>
+
   <nav>
-    <button class="ativo" onclick="mostrarPagina('inicio',this)">Início</button>
-    <button onclick="mostrarPagina('produtos',this)">Produtos</button>
+    <button class="ativo"
+      onclick="mostrarPagina('inicio',this)">
+      Início
+    </button>
+
+    <button onclick="mostrarPagina('produtos',this)">
+      Produtos
+    </button>
+
     <button onclick="mostrarPagina('favoritos',this)">
       Favoritos (<span id="quantidade">0</span>)
     </button>
-    <button onclick="mostrarPagina('conta',this)">Minha conta</button>
+
+    <button onclick="mostrarPagina('conta',this)">
+      Minha conta
+    </button>
   </nav>
-  <small id="usuario">Nenhuma conta ativa</small>
+
+  <small id="usuario"></small>
 </header>
 
 <main>
 
-
+<!-- PÁGINA INICIAL -->
 <section id="inicio" class="pagina ativa">
   <div class="hero">
 
@@ -234,44 +315,37 @@ select {
       filmes, séries, desenhos e futebol.
     </p>
 
+    <!-- APENAS DOIS BOTÕES -->
     <div class="somente-visitante">
-      <button
-        class="botao"
-        onclick="mostrarPagina('conta')"
-      >
+
+      <button class="botao"
+        onclick="mostrarPagina('conta')">
+        Criar conta
+      </button>
+
+      <button class="botao secundario"
+        onclick="mostrarPagina('conta')">
         Entrar
       </button>
 
-      <button
-        class="botao secundario"
-        onclick="mostrarPagina('conta')"
-      >
-        Criar conta
-      </button>
     </div>
 
-    
-<div style="display: flex; justify-content: center; gap: 15px; margin-top: 25px;">
-
-  <button class="botao" onclick="mostrarPagina('conta')">
-    Criar conta
-  </button>
-
-  
-<button class="botao secundario" onclick="mostrarPagina('produtos')">
-  Entrar
-</button>
-
-
-</div>
+    <div class="somente-logado">
+      <button class="botao"
+        onclick="mostrarPagina('produtos')">
+        Explorar coleção
+      </button>
+    </div>
 
   </div>
 </section>
 
-
+<!-- PRODUTOS -->
 <section id="produtos" class="pagina">
+
   <div class="barra">
     <h2>Catálogo de Chinelas</h2>
+
     <select id="filtro" onchange="mostrarProdutos()">
       <option value="">Todas as categorias</option>
       <option value="Filme">Filmes</option>
@@ -280,22 +354,26 @@ select {
       <option value="Futebol">Futebol</option>
     </select>
   </div>
+
   <div id="lista-produtos" class="grade"></div>
 </section>
 
+<!-- FAVORITOS -->
 <section id="favoritos" class="pagina">
   <h2>Minhas chinelas favoritas</h2>
   <div id="lista-favoritos" class="grade"></div>
 </section>
 
-
+<!-- MINHA CONTA -->
 <section id="conta" class="pagina">
+
   <h2>Minha conta</h2>
 
-  <!-- ÁREA PARA QUEM NÃO ESTÁ LOGADO -->
+  <!-- LOGIN E CADASTRO -->
   <div class="contas somente-visitante">
 
     <form id="form-login" class="caixa">
+
       <h3>Entrar</h3>
       <p>Acesse sua conta do Chinelas Club.</p>
 
@@ -320,11 +398,16 @@ select {
       <button class="botao" type="submit">
         Entrar
       </button>
+
     </form>
 
     <form id="form-cadastro" class="caixa">
+
       <h3>Criar conta</h3>
-      <p>Cadastre-se para salvar suas chinelas favoritas.</p>
+
+      <p>
+        Cadastre-se para salvar suas chinelas favoritas.
+      </p>
 
       <label for="nome">Nome</label>
       <input
@@ -357,11 +440,13 @@ select {
       <button class="botao" type="submit">
         Criar conta
       </button>
+
     </form>
   </div>
 
-  <!-- ÁREA DO USUÁRIO LOGADO -->
+  <!-- PERFIL DO USUÁRIO -->
   <div class="caixa somente-logado">
+
     <h3>Meu perfil</h3>
 
     <p>
@@ -377,40 +462,41 @@ select {
     <button
       class="botao"
       type="button"
-      onclick="abrirAtualizacao()"
-    >
+      onclick="abrirAtualizacao()">
       Atualizar conta
     </button>
 
     <button
       class="botao secundario"
       type="button"
-      onclick="sair()"
-    >
+      onclick="sair()">
       Sair da conta
     </button>
 
-    <!-- FORMULÁRIO DE ATUALIZAÇÃO -->
+    <button
+      class="botao perigo"
+      type="button"
+      onclick="excluirConta()">
+      Excluir conta
+    </button>
+
+    <!-- ATUALIZAR DADOS -->
     <div
       id="area-atualizacao"
-      style="display:none; margin-top:25px;"
-    >
+      style="display:none; margin-top:25px;">
+
       <h3>Atualizar meus dados</h3>
 
       <form id="form-atualizacao">
 
-        <label for="atualizar-nome">
-          Nome
-        </label>
+        <label for="atualizar-nome">Nome</label>
         <input
           id="atualizar-nome"
           type="text"
           required
         >
 
-        <label for="atualizar-email">
-          E-mail
-        </label>
+        <label for="atualizar-email">E-mail</label>
         <input
           id="atualizar-email"
           type="email"
@@ -424,33 +510,46 @@ select {
         <button
           class="botao secundario"
           type="button"
-          onclick="abrirAtualizacao()"
-        >
+          onclick="abrirAtualizacao()">
           Cancelar
         </button>
+
       </form>
     </div>
   </div>
 </section>
 
-
 </main>
 
+<!-- MODAL DE PRODUTOS -->
 <div id="modal" class="modal">
   <div class="modal-conteudo">
-    <button class="botao secundario" onclick="fecharModal()">Fechar</button>
+
+    <button class="botao secundario"
+      onclick="fecharModal()">
+      Fechar
+    </button>
+
     <img id="modal-imagem" alt="Chinela">
+
     <h2 id="modal-titulo"></h2>
+
     <p id="modal-descricao"></p>
+
     <p><strong>Tamanhos: 34 ao 48</strong></p>
+
   </div>
 </div>
 
 <div id="mensagem"></div>
 
 <script>
-const API = 'http://localhost:8787';
 
+// API PUBLICADA NO CLOUDFLARE
+const API =
+  'https://chinelo-mania-api.jarlasantana4.workers.dev';
+
+// PRODUTOS
 const produtos = [
   {id:1,nome:'Homem-Aranha',categoria:'Filme',imagem:'homem-aranha.jpg'},
   {id:2,nome:'Batman',categoria:'Filme',imagem:'batman.jpg'},
@@ -476,72 +575,112 @@ let favoritos = [];
 
 const $ = id => document.getElementById(id);
 
+// MENSAGENS
 function avisar(texto) {
   $('mensagem').textContent = texto;
   $('mensagem').style.display = 'block';
+
   clearTimeout(avisar.tempo);
+
   avisar.tempo = setTimeout(() => {
     $('mensagem').style.display = 'none';
-  },3500);
+  }, 3500);
 }
 
-async function requisicao(caminho,metodo='GET',dados=null) {
+// REQUISIÇÕES À API
+async function requisicao(caminho, metodo='GET', dados=null) {
+
   const opcoes = {
     method: metodo,
     headers: {
-      'Content-Type':'application/json',
+      'Content-Type': 'application/json',
       ...(token ? {Authorization:'Bearer '+token} : {})
     }
   };
-  if(dados !== null) opcoes.body = JSON.stringify(dados);
+
+  if(dados !== null) {
+    opcoes.body = JSON.stringify(dados);
+  }
 
   let resposta;
+
   try {
     resposta = await fetch(API+caminho,opcoes);
   } catch {
-    throw new Error('API indisponível. Verifique o Wrangler.');
+    throw new Error('API indisponível. Verifique sua conexão.');
   }
 
   const resultado = await resposta.json();
 
   if(!resposta.ok) {
+
     if(resposta.status === 401 && caminho !== '/login') {
       token = '';
       conta = null;
       favoritos = [];
+
       localStorage.removeItem('chinelas_token');
+
       atualizarContaVisual();
       atualizarContador();
     }
+
     throw new Error(resultado.error || 'Erro na API.');
   }
+
   return resultado;
 }
 
-function mostrarPagina(pagina,botao=null) {
+// NAVEGAÇÃO
+function mostrarPagina(pagina, botao=null) {
+
   document.querySelectorAll('.pagina').forEach(e => {
     e.classList.remove('ativa');
   });
+
   $(pagina).classList.add('ativa');
+
   document.querySelectorAll('nav button').forEach(e => {
     e.classList.remove('ativo');
   });
-  if(botao) botao.classList.add('ativo');
+
+  if(botao) {
+    botao.classList.add('ativo');
+  } else {
+    const indice = {
+      inicio: 0,
+      produtos: 1,
+      favoritos: 2,
+      conta: 3
+    };
+
+    const botoes = document.querySelectorAll('nav button');
+
+    if(indice[pagina] !== undefined) {
+      botoes[indice[pagina]].classList.add('ativo');
+    }
+  }
+
   if(pagina === 'produtos') mostrarProdutos();
   if(pagina === 'favoritos') mostrarFavoritos();
+
+  window.scrollTo(0,0);
 }
 
+// IMAGENS
 function imagemProduto(produto) {
-  return './imagens/'+produto.imagem;
+  return './imagens/' + produto.imagem;
 }
 
+// CRIAR CARD
 function criarCard(produto) {
+
   const card = document.createElement('article');
   card.className = 'produto';
 
   const imagem = document.createElement('img');
   imagem.src = imagemProduto(produto);
-  imagem.alt = 'Chinela '+produto.nome;
+  imagem.alt = 'Chinela ' + produto.nome;
   card.appendChild(imagem);
 
   const etiqueta = document.createElement('span');
@@ -550,12 +689,14 @@ function criarCard(produto) {
   card.appendChild(etiqueta);
 
   const titulo = document.createElement('h3');
-  titulo.textContent = 'Chinela '+produto.nome;
+  titulo.textContent = 'Chinela ' + produto.nome;
   card.appendChild(titulo);
 
   const descricao = document.createElement('p');
-  descricao.textContent = 'Estampa temática de '+produto.nome+
+  descricao.textContent =
+    'Estampa temática de ' + produto.nome +
     '. Disponível do tamanho 34 ao 48.';
+
   card.appendChild(descricao);
 
   const acoes = document.createElement('div');
@@ -573,88 +714,131 @@ function criarCard(produto) {
 
   const coracao = document.createElement('button');
   const marcado = favoritos.includes(produto.id);
-  coracao.className = 'coracao'+(marcado ? ' marcado' : '');
+
+  coracao.className =
+    'coracao' + (marcado ? ' marcado' : '');
+
   coracao.textContent = marcado ? '♥' : '♡';
   coracao.title = 'Favoritar ou remover';
+
   coracao.onclick = () => alterarFavorito(produto);
+
   acoes.appendChild(coracao);
 
   card.appendChild(acoes);
+
   return card;
 }
 
+// MOSTRAR PRODUTOS
 function mostrarProdutos() {
+
   const filtro = $('filtro').value;
   const lista = $('lista-produtos');
+
   lista.innerHTML = '';
+
   produtos
     .filter(p => !filtro || p.categoria === filtro)
     .forEach(p => lista.appendChild(criarCard(p)));
 }
 
+// MOSTRAR FAVORITOS
 function mostrarFavoritos() {
+
   const lista = $('lista-favoritos');
   lista.innerHTML = '';
-  const selecionados = produtos.filter(p => favoritos.includes(p.id));
+
+  const selecionados = produtos.filter(p =>
+    favoritos.includes(p.id)
+  );
+
   if(!selecionados.length) {
     lista.textContent = 'Nenhuma chinela favorita ainda.';
     return;
   }
-  selecionados.forEach(p => lista.appendChild(criarCard(p)));
+
+  selecionados.forEach(p =>
+    lista.appendChild(criarCard(p))
+  );
 }
 
+// CONTADOR
 function atualizarContador() {
   $('quantidade').textContent = favoritos.length;
   mostrarProdutos();
   mostrarFavoritos();
 }
 
+// CARREGAR FAVORITOS
 async function carregarFavoritos() {
+
   if(!conta) {
     favoritos = [];
     atualizarContador();
     return;
   }
+
   try {
-    const dados = await requisicao(`/clients/${conta.id}/favorites`);
-    favoritos = dados.map(item => Number(item.product_id));
+    const dados = await requisicao(
+      `/clients/${conta.id}/favorites`
+    );
+
+    favoritos = dados.map(item =>
+      Number(item.product_id)
+    );
+
     atualizarContador();
+
   } catch(erro) {
     avisar(erro.message);
   }
 }
 
+// ADICIONAR OU REMOVER FAVORITO
 async function alterarFavorito(produto) {
+
   if(!conta) {
     avisar('Entre ou crie sua conta antes de favoritar.');
     mostrarPagina('conta');
     return;
   }
+
   try {
+
     if(favoritos.includes(produto.id)) {
+
       await requisicao(
-        `/clients/${conta.id}/favorites/${produto.id}`,'DELETE'
+        `/clients/${conta.id}/favorites/${produto.id}`,
+        'DELETE'
       );
+
       avisar('Favorito removido do banco D1.');
+
     } else {
+
       await requisicao(
-        `/clients/${conta.id}/favorites`,'POST',
-        {product_id:produto.id}
+        `/clients/${conta.id}/favorites`,
+        'POST',
+        {product_id: produto.id}
       );
+
       avisar('Favorito salvo no banco D1!');
     }
+
     await carregarFavoritos();
+
   } catch(erro) {
     avisar(erro.message);
   }
 }
 
-
-
+// ATUALIZAR VISUAL DA CONTA
 function atualizarContaVisual() {
-  const usuario = document.getElementById('usuario');
 
-  if (usuario) {
+  const usuario = $('usuario');
+
+  if(usuario) {
     usuario.textContent = conta
       ? 'Olá, ' + conta.name
       : '';
@@ -670,171 +854,260 @@ function atualizarContaVisual() {
       elemento.style.display = conta ? 'none' : '';
     });
 
-  const nome = document.getElementById('perfil-nome');
-  const email = document.getElementById('perfil-email');
+  const nome = $('perfil-nome');
+  const email = $('perfil-email');
 
-  if (nome) nome.textContent = conta?.name || '';
-  if (email) email.textContent = conta?.email || '';
+  if(nome) nome.textContent = conta?.name || '';
+  if(email) email.textContent = conta?.email || '';
 }
 
+// CADASTRAR CONTA
+$('form-cadastro').addEventListener(
+  'submit',
+  async evento => {
 
+    evento.preventDefault();
 
-$('form-cadastro').addEventListener('submit',async evento => {
-  evento.preventDefault();
-  try {
-    const resultado = await requisicao('/clients','POST',{
-      name:$('nome').value.trim(),
-      email:$('email').value.trim(),
-      password:$('senha').value
-    });
-    conta = {
-      id:resultado.id,
-      name:resultado.name,
-      email:resultado.email
-    };
-    token = resultado.token;
-    localStorage.setItem('chinelas_token',token);
-    evento.target.reset();
-    atualizarContaVisual();
-    await carregarFavoritos();
-    avisar('Conta cadastrada no banco D1!');
-  } catch(erro) {
-    avisar(erro.message);
+    try {
+
+      const resultado = await requisicao(
+        '/clients',
+        'POST',
+        {
+          name: $('nome').value.trim(),
+          email: $('email').value.trim(),
+          password: $('senha').value
+        }
+      );
+
+      conta = {
+        id: resultado.id,
+        name: resultado.name,
+        email: resultado.email
+      };
+
+      token = resultado.token;
+
+      localStorage.setItem('chinelas_token', token);
+
+      evento.target.reset();
+
+      atualizarContaVisual();
+      await carregarFavoritos();
+
+      avisar('Conta cadastrada com sucesso!');
+
+      // IR AUTOMATICAMENTE PARA PRODUTOS
+      mostrarPagina('produtos');
+
+    } catch(erro) {
+      avisar(erro.message);
+    }
   }
-});
+);
 
-$('form-login').addEventListener('submit',async evento => {
-  evento.preventDefault();
-  try {
-    const resultado = await requisicao('/login','POST',{
-      email:$('login-email').value.trim(),
-      password:$('login-senha').value
-    });
-    token = resultado.token;
-    conta = resultado.client;
-    localStorage.setItem('chinelas_token',token);
-    evento.target.reset();
-    atualizarContaVisual();
-    await carregarFavoritos();
-    avisar('Login realizado com sucesso!');
-  } catch(erro) {
-    avisar(erro.message);
+// ENTRAR NA CONTA
+$('form-login').addEventListener(
+  'submit',
+  async evento => {
+
+    evento.preventDefault();
+
+    try {
+
+      const resultado = await requisicao(
+        '/login',
+        'POST',
+        {
+          email: $('login-email').value.trim(),
+          password: $('login-senha').value
+        }
+      );
+
+      token = resultado.token;
+      conta = resultado.client;
+
+      localStorage.setItem('chinelas_token', token);
+
+      evento.target.reset();
+
+      atualizarContaVisual();
+      await carregarFavoritos();
+
+      avisar('Login realizado com sucesso!');
+
+      // ABRIR PRODUTOS APÓS LOGIN
+      mostrarPagina('produtos');
+
+    } catch(erro) {
+      avisar(erro.message);
+    }
   }
-});
+);
 
-
-
+// EXCLUIR CONTA
 async function excluirConta() {
+
   if(!conta) {
     avisar('Nenhuma conta ativa.');
     return;
   }
-  if(!confirm('Deseja realmente excluir sua conta?')) return;
+
+  if(!confirm('Deseja realmente excluir sua conta?')) {
+    return;
+  }
+
   try {
-    await requisicao(`/clients/${conta.id}`,'DELETE');
+
+    await requisicao(
+      `/clients/${conta.id}`,
+      'DELETE'
+    );
+
     conta = null;
     token = '';
     favoritos = [];
+
     localStorage.removeItem('chinelas_token');
+
     atualizarContaVisual();
     atualizarContador();
+
     avisar('Conta excluída do banco D1.');
+
+    mostrarPagina('inicio');
+
   } catch(erro) {
     avisar(erro.message);
   }
 }
 
+// SAIR DA CONTA
 async function sair() {
+
   try {
-    if(token) await requisicao('/logout','POST');
+    if(token) {
+      await requisicao('/logout','POST');
+    }
   } catch {}
+
   token = '';
   conta = null;
   favoritos = [];
+
   localStorage.removeItem('chinelas_token');
+
   atualizarContaVisual();
   atualizarContador();
+
   avisar('Você saiu da sua conta.');
+
+  mostrarPagina('inicio');
 }
 
+// RESTAURAR SESSÃO
 async function restaurarSessao() {
+
   if(!token) return;
+
   try {
+
     const dados = await requisicao('/me');
+
     conta = {
-      id:dados.client_id,
-      name:dados.name,
-      email:dados.email
+      id: dados.client_id,
+      name: dados.name,
+      email: dados.email
     };
+
     atualizarContaVisual();
     await carregarFavoritos();
+
   } catch {
+
     token = '';
     conta = null;
+
     localStorage.removeItem('chinelas_token');
+
     atualizarContaVisual();
   }
 }
 
-
+// ABRIR ATUALIZAÇÃO
 function abrirAtualizacao() {
-  if (!conta) return;
 
-  const area = document.getElementById('area-atualizacao');
+  if(!conta) return;
+
+  const area = $('area-atualizacao');
 
   area.style.display =
-    area.style.display === 'none' ? 'block' : 'none';
+    area.style.display === 'none'
+      ? 'block'
+      : 'none';
 
-  document.getElementById('atualizar-nome').value =
-    conta.name;
-
-  document.getElementById('atualizar-email').value =
-    conta.email;
+  $('atualizar-nome').value = conta.name;
+  $('atualizar-email').value = conta.email;
 }
 
-document.getElementById('form-atualizacao')
-  .addEventListener('submit', async (evento) => {
+// SALVAR ATUALIZAÇÃO
+$('form-atualizacao').addEventListener(
+  'submit',
+  async evento => {
+
     evento.preventDefault();
 
-    if (!conta) return;
+    if(!conta) return;
 
     try {
+
       const resultado = await requisicao(
         '/clients/' + conta.id,
         'PUT',
         {
-          name: document.getElementById('atualizar-nome').value.trim(),
-          email: document.getElementById('atualizar-email').value.trim()
+          name: $('atualizar-nome').value.trim(),
+          email: $('atualizar-email').value.trim()
         }
       );
 
-      conta = { ...conta, ...resultado };
+      conta = {...conta, ...resultado};
 
       atualizarContaVisual();
-      document.getElementById('area-atualizacao')
-        .style.display = 'none';
+
+      $('area-atualizacao').style.display = 'none';
 
       avisar('Conta atualizada com sucesso!');
-    } catch (erro) {
+
+    } catch(erro) {
       avisar(erro.message);
     }
-  });
+  }
+);
 
-
+// MODAL DE PRODUTO
 function abrirModal(produto) {
+
   $('modal-imagem').src = imagemProduto(produto);
-  $('modal-titulo').textContent = 'Chinela '+produto.nome;
-  $('modal-descricao').textContent = 'Modelo temático de '+produto.nome;
+
+  $('modal-titulo').textContent =
+    'Chinela ' + produto.nome;
+
+  $('modal-descricao').textContent =
+    'Modelo temático de ' + produto.nome;
+
   $('modal').classList.add('ativo');
 }
 
+// FECHAR MODAL
 function fecharModal() {
   $('modal').classList.remove('ativo');
 }
 
+// INICIALIZAÇÃO
 atualizarContaVisual();
 atualizarContador();
 restaurarSessao();
+
 </script>
 </body>
 </html>
