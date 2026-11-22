@@ -315,20 +315,22 @@ select {
       filmes, séries, desenhos e futebol.
     </p>
 
-    <!-- APENAS DOIS BOTÕES -->
-    <div class="somente-visitante">
+    
+<!-- APENAS DOIS BOTÕES -->
+<div class="somente-visitante">
 
-      <button class="botao"
-        onclick="mostrarPagina('conta')">
-        Criar conta
-      </button>
+  <button class="botao"
+    onclick="mostrarPagina('conta'); document.getElementById('nome').focus()">
+    Criar conta
+  </button>
 
-      <button class="botao secundario"
-        onclick="mostrarPagina('conta')">
-        Entrar
-      </button>
+  <button class="botao secundario"
+    onclick="entrarPeloInicio()">
+    Entrar
+  </button>
 
-    </div>
+</div>
+
 
     <div class="somente-logado">
       <button class="botao"
@@ -1102,6 +1104,16 @@ function abrirModal(produto) {
 function fecharModal() {
   $('modal').classList.remove('ativo');
 }
+
+function entrarPeloInicio() {
+  if (conta && token) {
+    mostrarPagina('produtos');
+  } else {
+    mostrarPagina('conta');
+    document.getElementById('login-email').focus();
+  }
+}
+
 
 // INICIALIZAÇÃO
 atualizarContaVisual();
