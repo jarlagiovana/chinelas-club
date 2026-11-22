@@ -37,7 +37,7 @@ async function derive(password, salt, iterations) {
 
 async function hashPassword(password) {
   const salt = crypto.getRandomValues(new Uint8Array(16))
-  return `pbkdf2_sha256$210000$${hex(salt)}$${hex(await derive(password, salt, 210000))}`
+  return `pbkdf2_sha256$100000$${hex(salt)}$${hex(await derive(password, salt, 100000))}`
 }
 
 async function verifyPassword(password, stored) {
@@ -181,6 +181,7 @@ app.get('/categories', (c) => {
 
 // CADASTRO
 
+
 app.post('/clients', async c => {
   try {
     const { name, email, password } = await c.req.json()
@@ -218,14 +219,19 @@ app.post('/clients', async c => {
       token,
       message: 'Cliente cadastrado com sucesso!'
     }, 201)
+
   } catch (error) {
+    console.error('ERRO REAL NO CADASTRO:', error)
+
     if (String(error).includes('UNIQUE')) {
       return c.json({
         error: 'E-mail já cadastrado. Use Entrar na minha conta.'
       }, 409)
     }
 
-    return c.json({ error: 'Erro ao cadastrar cliente.' }, 500)
+    return c.json({
+      error: 'Erro ao cadastrar cliente.'
+    }, 500)
   }
 })
 
