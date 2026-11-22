@@ -169,18 +169,14 @@ app.get('/products/:id', async c => {
   }
 })
 
-app.get('/categories', async c => {
-  try {
-    const response = await fetch(`${FAKE_STORE}/products/categories`)
 
-    if (!response.ok) {
-      return c.json({ error: 'Erro ao buscar categorias.' }, 502)
-    }
-
-    return c.json(await response.json())
-  } catch {
-    return c.json({ error: 'API externa indisponível.' }, 502)
-  }
+app.get('/categories', (c) => {
+  return c.json([
+    'Filmes',
+    'Séries',
+    'Desenhos',
+    'Futebol'
+  ])
 })
 
 // CADASTRO
