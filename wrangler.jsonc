@@ -1,0 +1,13 @@
+
+{
+  "name": "chinelo-mania-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "chinelas-db",
+      "database_id": "9c0ec2db-0104-4e3c-a485-96a1d5a711fb"
+    }
+  ]
+}
