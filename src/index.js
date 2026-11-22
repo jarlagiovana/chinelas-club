@@ -377,14 +377,22 @@ app.put('/clients/:id', async c => {
       email,
       message: 'Cliente atualizado!'
     })
+  
   } catch (error) {
     if (String(error).includes('UNIQUE')) {
-      return c.json({ error: 'E-mail já cadastrado.' }, 409)
+      return c.json({
+        error: 'E-mail já cadastrado. Use Entrar na minha conta.'
+      }, 409)
     }
 
-    return c.json({ error: 'Erro ao atualizar cliente.' }, 500)
+    console.error('Erro no cadastro:', error)
+
+    return c.json({
+      error: 'Erro ao cadastrar cliente.'
+    }, 500)
   }
 })
+
 
 // EXCLUIR CLIENTE
 
@@ -446,6 +454,7 @@ app.post('/clients/:id/favorites', async c => {
     VALUES (?, ?)
   `).bind(id, body.product_id).run()
 
+  
   return c.json({
     message: result.meta.changes
       ? 'Favorito adicionado!'
